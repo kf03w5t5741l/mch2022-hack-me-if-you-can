@@ -1,5 +1,5 @@
 # mch2022-hack-me-if-you-can
-Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can")
+Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can").
 
 ## Steps to exploitation:
 1. Observe behaviour
