@@ -14,7 +14,7 @@ Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can")
    - Observe that certain buffer sizes >48 bytes will trigger a `gdbstub`
      register dump to the debug console.
    - Use the register dump to follow execution flow in Ghidra and determine
-     that the callee is do_echo_recursive() and caller is echo_server() at the
+     that the callee is `do_echo_recursive()` and caller is `echo_server()` at the
      time our return address gets loaded into the program counter.
    - Identify the offsets needed to set the return address (`a0`) and stack
      pointer (`a1`) of the callee's register window, and the registers `a10`
