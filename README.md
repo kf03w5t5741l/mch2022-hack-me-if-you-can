@@ -32,7 +32,7 @@ Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can").
    - Set **a11** (`*data` argument) to the flag location we found earlier.
    - Observe that register **a12** (`size` argument) is reliably set to a large
      value and does not need to be modified.
-   - Observe that register **a13** (`flags` argument), contains a non-zero value
+   - Observe that register **a13** (`flags` argument) contains a non-zero value
      but nevertheless does not interfere with our call to `lwip_write()`.
 6. Create malicious buffer and run exploit
 
