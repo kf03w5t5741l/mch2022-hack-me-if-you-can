@@ -29,7 +29,7 @@ Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can").
    - Use the register dump to observe that the socket descriptor (register **a2**
      in the `echo_server()` register window) is always the same (`0x37`) and
      likely deterministic. Set **a10** (`socket` argument) to `0x37`.
-   - Set a11 (`*data` argument) to the flag location we found earlier.
+   - Set **a11** (`*data` argument) to the flag location we found earlier.
    - Observe that register **a12** (`size` argument) is reliably set to a large
      value and does not need to be modified.
    - Observe that register **a13** (`flags` argument), contains a non-zero value
