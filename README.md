@@ -29,7 +29,7 @@ Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can").
 5. Determine ROP gadget arguments
    - Use the register dump to observe that the socket descriptor (register **a2**
      in the caller's register window) is always the same (`0x37`) and likely
-     deterministic. Set a10 (`socket` argument) to `0x37`.
+     deterministic. Set **a10** (`socket` argument) to `0x37`.
    - Set **a11** (`*data` argument) to the flag location we found earlier.
    - Observe that register **a12** (`size` argument) is reliably set to a large
      value and does not need to be modified.
