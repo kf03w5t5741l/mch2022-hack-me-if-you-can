@@ -17,7 +17,7 @@ Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can").
      that the callee at the time our corrupted return address gets loaded
      is the innermost call to `do_echo_recursive()`. The caller is the second
      innermost call.
-     - Identify the offsets needed to set the return address (**a0**) and stack
+   - Identify the offsets needed to set the return address (**a0**) and stack
      pointer (**a1**) of the callee's register window, and the registers **a10**
      and **a11** of the caller's register window.
 4. Identify ROP gadget
