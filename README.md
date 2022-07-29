@@ -14,21 +14,23 @@ Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can").
    - Observe that certain buffer sizes >48 bytes will trigger a `gdbstub`
      register dump to the debug console.
    - Use the register dump to follow execution flow in Ghidra and determine
-     that the callee is `do_echo_recursive()` and caller is `echo_server()` at the
-     time our return address gets loaded into the program counter.
+     that the callee at the time our return address gets loaded into the
+     program counter is the innermost call to the recursive function
+     `do_echo_recursive()`. The caller is the second innermost call to 
+     `do_echo_recursive()`.
    - Identify the offsets needed to set the return address (**a0**) and stack
      pointer (**a1**) of the callee's register window, and the registers **a10**
      and **a11** of the caller's register window.
 4. Identify ROP gadget
    - Use Ghidra to identify a `call8` instruction to 
      `lwip_write(int socket, void* data, size_t size)`. We can use this
-     instruction to send data back to our client. Note we can do this without
+     function to send data back to our client. Note we can do this without
      any setup because a TCP connection already exists at the time we hijack
      execution flow.
 5. Determine ROP gadget arguments
    - Use the register dump to observe that the socket descriptor (register **a2**
-     in the `echo_server()` register window) is always the same (`0x37`) and
-     likely deterministic. Set **a10** (`socket` argument) to `0x37`.
+     in the caller's register window) is always the same (`0x37`) and likely
+     deterministic. Set a10 (`socket` argument) to `0x37`.
    - Set **a11** (`*data` argument) to the flag location we found earlier.
    - Observe that register **a12** (`size` argument) is reliably set to a large
      value and does not need to be modified.
