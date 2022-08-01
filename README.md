@@ -1,5 +1,6 @@
 # mch2022-hack-me-if-you-can
-Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can").
+Exploit for the MCH2022 CTF badge challenge ("Hack Me If You Can"). A full walkthrough
+can be found at [wallaby3.com/posts/mch2022-badge-challenge/](https://wallaby3.com/posts/mch2022-badge-challenge/).
 
 ## Steps to exploitation:
 1. Observe behaviour
